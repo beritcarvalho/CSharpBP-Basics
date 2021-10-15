@@ -11,6 +11,22 @@ namespace Acme.Biz
     /// </summary>
     public class Product
     {
+        public Product()
+        {
+            Console.WriteLine("Product instância criada");
+        }
+
+        public Product(string productName,
+                       int productId,
+                       string description) : this()
+        {
+            this.ProductId = productId;
+            this.ProductName = productName;
+            this.Description = description;
+
+            Console.WriteLine("Product instância tem o nome: " + ProductName);
+        }
+
         private string productName;
 
         public string ProductName

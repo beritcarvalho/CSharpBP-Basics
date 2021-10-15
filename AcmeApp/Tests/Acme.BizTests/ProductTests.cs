@@ -27,5 +27,22 @@ namespace Acme.Biz.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void SayHelloTest_Contrutor_Parametrizado()
+        {
+            //Arrange
+            var currentProduct = new Product("Notebook",
+                                              1,
+                                             "Notebook Acer Aspire 5");
+
+            var expected = "Hello Notebook (1): Notebook Acer Aspire 5";
+
+            //Act
+            var actual = currentProduct.SayHello();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
