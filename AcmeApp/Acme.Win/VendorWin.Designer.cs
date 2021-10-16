@@ -111,7 +111,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(301, 187);
             this.Name = "VendorWin";
-            this.Text = "Vendor Detail";
+            this.Text = "Fornecedor Detail";
             this.Load += new System.EventHandler(this.Vendor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

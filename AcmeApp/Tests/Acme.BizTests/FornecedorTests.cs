@@ -9,48 +9,48 @@ using System.Threading.Tasks;
 namespace Acme.Biz.Tests
 {
     [TestClass()]
-    public class VendorTests
+    public class FornecedorTests
     {
         [TestMethod()]
-        public void SendWelcomeEmail_ValidCompany_Success()
+        public void EnviaEmailBoasVindas_EmpresaValida_Success()
         {
             // Arrange
-            var vendor = new Vendor();
-            vendor.CompanyName = "ABC Corp";
+            var vendor = new Fornecedor();
+            vendor.NomeEmpresa = "ABC Corp";
             var expected = "Message sent: Hello ABC Corp";
 
             // Act
-            var actual = vendor.SendWelcomeEmail("Test Message");
+            var actual = vendor.EnviaEmailBoasVindas("Test Message");
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void SendWelcomeEmail_EmptyCompany_Success()
+        public void EnviaEmailBoasVindas_EmpresaVazio_Success()
         {
             // Arrange
-            var vendor = new Vendor();
-            vendor.CompanyName = "";
+            var vendor = new Fornecedor();
+            vendor.NomeEmpresa = "";
             var expected = "Message sent: Hello";
 
             // Act
-            var actual = vendor.SendWelcomeEmail("Test Message");
+            var actual = vendor.EnviaEmailBoasVindas("Test Message");
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void SendWelcomeEmail_NullCompany_Success()
+        public void EnviaEmailBoas_EmpresaNull_Success()
         {
             // Arrange
-            var vendor = new Vendor();
-            vendor.CompanyName = null;
+            var vendor = new Fornecedor();
+            vendor.NomeEmpresa = null;
             var expected = "Message sent: Hello";
 
             // Act
-            var actual = vendor.SendWelcomeEmail("Test Message");
+            var actual = vendor.EnviaEmailBoasVindas("Test Message");
 
             // Assert
             Assert.AreEqual(expected, actual);

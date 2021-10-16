@@ -13,7 +13,7 @@ namespace Acme.Win
 {
     public partial class VendorWin : Form
     {
-        Vendor currentVendor;
+        Fornecedor currentVendor;
         VendorRepository vendorRepository;
 
         public VendorWin()
@@ -29,7 +29,7 @@ namespace Acme.Win
         private void SaveButton_Click(object sender, EventArgs e)
         {
             // Update the properties
-            currentVendor.CompanyName = this.CompanyNameTextBox.Text;
+            currentVendor.NomeEmpresa = this.CompanyNameTextBox.Text;
             currentVendor.Email = this.EmailTextBox.Text;
             vendorRepository.Save(currentVendor);
         }
@@ -45,7 +45,7 @@ namespace Acme.Win
             currentVendor = vendorRepository.Retrieve(1);
 
             // Populate the form
-            this.CompanyNameTextBox.Text = currentVendor.CompanyName;
+            this.CompanyNameTextBox.Text = currentVendor.NomeEmpresa;
             this.EmailTextBox.Text = currentVendor.Email;
         }
 

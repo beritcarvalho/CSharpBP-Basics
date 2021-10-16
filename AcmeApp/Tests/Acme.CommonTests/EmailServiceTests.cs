@@ -13,7 +13,7 @@ namespace Acme.Common.Tests
             var expected = "Message sent: Test Message";
 
             // Act
-            var actual = email.SendMessage("Test Message",
+            var actual = email.EnviaMensagem("Test Message",
                 "This is a test message", "abc@abc.com");
 
             // Assert

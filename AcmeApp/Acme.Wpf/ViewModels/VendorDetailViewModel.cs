@@ -4,7 +4,7 @@ namespace Acme.Wpf.ViewModels
 {
     public class VendorDetailViewModel
     {
-        public Vendor currentVendor { get; set; }
+        public Fornecedor currentVendor { get; set; }
 
         VendorRepository vendorRepository = new VendorRepository();
 

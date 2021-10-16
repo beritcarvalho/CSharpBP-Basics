@@ -10,22 +10,22 @@ namespace Acme.Biz
     /// <summary>
     /// Manages the vendors from whom we purchase our inventory.
     /// </summary>
-    public class Vendor 
+    public class Fornecedor 
     {
-        public int VendorId { get; set; }
-        public string CompanyName { get; set; }
+        public int FornecedorId { get; set; }
+        public string NomeEmpresa { get; set; }
         public string Email { get; set; }
 
         /// <summary>
         /// Sends an email to welcome a new vendor.
         /// </summary>
         /// <returns></returns>
-        public string SendWelcomeEmail(string message)
+        public string EnviaEmailBoasVindas(string mensagem)
         {
             var emailService = new EmailService();
-            var subject = ("Hello " + this.CompanyName).Trim();
-            var confirmation = emailService.SendMessage(subject,
-                                                        message, 
+            var subject = ("Hello " + this.NomeEmpresa).Trim();
+            var confirmation = emailService.EnviaMensagem(subject,
+                                                        mensagem, 
                                                         this.Email);
             return confirmation;
         }
